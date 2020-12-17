@@ -14,7 +14,6 @@ for i in range(2**n):
 
     for k in range(m):
         for x in range(d[k][0]):
-            print("{} / {}".format(d[k][x], st))
             if d[k][x+1] in st:
                 check[k] += 1
     for j in range(m):
