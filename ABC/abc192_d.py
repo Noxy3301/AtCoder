@@ -1,3 +1,4 @@
+#toketenai
 def base(num, sinsuu):
     var = 0
     for i in range(len(str(num))):
