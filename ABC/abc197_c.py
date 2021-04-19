@@ -18,7 +18,7 @@ for i in range(2**(n-1)):
         tmp_or = list(data[j])
         while len(tmp_or) > 1:
             tmp_or.append(tmp_or[0] | tmp_or[1])
-            tmp_or = 
+            #tmp_or = 
 
 
 
