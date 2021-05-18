@@ -1,8 +1,10 @@
-#wa wakewakaran
+#確率1/pが出る期待値は逆数のp
+
 n = int(input())
-ans = 1
+
+ans = 0
 
 for i in range(1,n):
-    ans *= (n*(i-n)+n**2)/(i-n)**2
+    ans += n/i
 
 print(ans)
