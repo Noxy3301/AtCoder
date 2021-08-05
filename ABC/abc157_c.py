@@ -1,23 +1,16 @@
-#wa
 import sys
- 
 n,m = map(int, input().split())
- 
-num = ["0"]*n
-flag = [0]*n
- 
-for i in range(m):
-    s,c = map(int, input().split())
-    if flag[s-1] != 0 and num[s-1] != str(c):
-        print(-1)
-        sys.exit()
-    else:
-        flag[s-1] = 1
-        num[s-1] = str(c)
- 
-ans = "".join(num)
- 
-if ans != str(int(ans)):
-    print(-1)
-else:
-    print(ans)
+d = [tuple(map(int, input().split())) for i in range(m)]
+
+for i in range(10**n):
+    string = str(i).ljust(n, "0")
+    flag = True
+    for j in d:
+        if string[j[0]-1] != str(j[1]):
+            flag = False
+    if flag == True:
+        if string == str(int(string)):
+            print(string)
+            sys.exit()
+
+print(-1)

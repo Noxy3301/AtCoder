@@ -1,15 +1,9 @@
-#wa
 n = int(input())
-a = tuple(map(int, input().split()))
-cum = [sum(a[:i+1]) for i in range(n)]
-cum_l = [sum(cum[:i+1]) for i in range(n)]
-cum_max = []
-current = -10**9
+a = list(map(int, input().split()))
+cum, cum_cum = [0], [0]
 for i in range(n):
-    current = max(current, cum[i])
-    cum_max.append(current)
+    cum.append(cum[-1] + a[i])
+for i in range(1, n+1):
+    cum_cum.append(cum_cum[-1] + cum[i])
 
-dekai = -10**9
-for i in range(n):
-    dekai = max(dekai, cum_l[i]+cum_max[i])
-print(max(dekai,0))
+print(max(cum_cum) + max(cum))
